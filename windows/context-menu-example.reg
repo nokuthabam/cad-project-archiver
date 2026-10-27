@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+
+; EDIT BOTH paths before importing. The %%1 argument is the right-clicked folder.
+; Ensure that Python and this repository are installed on the computer.
+; Use registry editing cautiously and back up relevant keys first.
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\CADArchivePreview]
+@="CAD Archive - Preview (Safe)"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\CADArchivePreview\command]
+@="\"C:\\Path\\To\\Python\\python.exe\" -m cad_archiver \"%1\" --pause"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\CADArchiveCreate]
+@="CAD Archive - Create ZIP"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\CADArchiveCreate\command]
+@="\"C:\\Path\\To\\Python\\python.exe\" -m cad_archiver \"%1\" --archive --pause"
